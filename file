@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('git scm') {
             steps {
-                echo 'this is fetching stage'
+                git 'https://github.com/Dimple-sasi-12/declarative.git'
             }
         }
          stage('build') {
             steps {
-                echo 'this is build stage'
+                bat 'mvn install'
             }
         }
          stage('test') {

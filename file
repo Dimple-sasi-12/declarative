@@ -1,9 +1,12 @@
 pipeline {
     agent any
+    tools {
+        maven 'maven'
+    }
     stages {
         stage('git scm') {
             steps {
-                git 'https://github.com/Dimple-sasi-12/declarative.git'
+                git branch: 'main', url: 'https://github.com/Dimple-sasi-12/declarative.git'
             }
         }
          stage('build') {
@@ -23,6 +26,7 @@ pipeline {
         }
     }
 }
+
 
 
 
